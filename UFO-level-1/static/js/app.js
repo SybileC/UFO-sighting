@@ -17,4 +17,23 @@ tableData.forEach(info => {
     });
 });
 
+var button = d3.select("#filter-btn");
+
+var form = d3.select("#filters")
+
 var inputfield = d3.select("#datetime");
+
+button.on("click", runEnter);
+form.on("submit", runEnter);
+
+function runEnter(){
+    d3.preventDefault();
+    var inputValue = inputfield.property("value");
+
+    console.log(d3.event.target);
+    console.log(inputValue);
+
+    var filteredData = tableData.filter(info => info.datetime === inputValue);
+
+    console.log(filteredData);
+}
