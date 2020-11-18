@@ -16,3 +16,5 @@ tableData.forEach(info => {
         cell.text(value);
     });
 });
+
+var inputfield = d3.select("#datetime");
