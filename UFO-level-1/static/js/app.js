@@ -26,7 +26,7 @@ function createTable(tableData) {
 function runEnter(){
     d3.event.preventDefault();
     
-    const inputValue = d3.select("#datetime").property("value");
+    const inputValue = d3.select("form>input").property("value");
 
     console.log(d3.event.target);
     console.log(inputValue);
@@ -50,7 +50,7 @@ function runEnter(){
 
 var button = d3.selectAll("#filter-btn");
 
-var form = d3.selectAll("#filters")
+var form = d3.selectAll("form")
 
 
 button.on("click", runEnter);
