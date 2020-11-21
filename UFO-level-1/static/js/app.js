@@ -7,7 +7,11 @@ tbody = d3.select("tbody");
 
 console.log(tableData)
 
-tableData.forEach(info => {
+// function createTable(tabledata) {
+
+//     table = tbody.html("")
+    
+    tableData.forEach(info => {
     console.log(info);
     var row = tbody.append("tr");
     Object.entries(info).forEach(([key, value]) => {
@@ -16,24 +20,32 @@ tableData.forEach(info => {
         cell.text(value);
     });
 });
+// };
 
 var button = d3.select("#filter-btn");
 
 var form = d3.select("#filters")
 
-var inputfield = d3.select("#datetime");
 
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
 function runEnter(){
-    d3.preventDefault();
+    d3.event.preventDefault();
+    
+    var inputfield = d3.select("datetime");
     var inputValue = inputfield.property("value");
 
     console.log(d3.event.target);
     console.log(inputValue);
 
+    //  reset table
+     tbody.html("")
+
+
     var filteredData = tableData.filter(info => info.datetime === inputValue);
 
+    cell.append(filteredData);
+
     console.log(filteredData);
-}
+};
