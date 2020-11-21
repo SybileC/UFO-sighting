@@ -45,6 +45,9 @@ function runEnter(){
     createTable(filteredData);
 }
 
+
+}
+
 var button = d3.selectAll("#filter-btn");
 
 var form = d3.selectAll("#filters")
