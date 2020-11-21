@@ -3,49 +3,54 @@ var tableData = data;
 
 // YOUR CODE HERE!
 
-tbody = d3.select("tbody");
+const tbody = d3.select("tbody");
 
 console.log(tableData)
 
-function createTable(tabledata) {
+function createTable(tableData) {
 
-    table = tbody.html("")
+    tbody.html("")
     
     tableData.forEach(info => {
     console.log(info);
-    var row = tbody.append("tr");
-    Object.entries(info).forEach(([key, value]) => {
-        console.log(key, value);
-        cell = row.append("td");
+    const row = tbody.append("tr");
+    Object.values(info).forEach((value) => {
+        console.log(value);
+        let cell = row.append("td");
         cell.text(value);
     });
 });
-};
+}
 
-var button = d3.select("#filter-btn");
-
-var form = d3.select("#filters")
-
-
-button.on("click", runEnter);
-form.on("submit", runEnter);
 
 function runEnter(){
     d3.event.preventDefault();
     
-    const inputfield = d3.select("#datetime");
-    const inputValue = inputfield.property("value");
+    const inputValue = d3.select("#datetime").property("value");
 
     console.log(d3.event.target);
     console.log(inputValue);
 
     //  reset table
-     tbody.html("")
+     
+    let filteredData = tableData
+
+    if (inputValue); {
+        
+        filteredData = filteredData.filter(info => info.datetime === inputValue);
+
+    // tbody.append(filteredData);
+
+    // console.log(filteredData);
+    createTable(filteredData);
+}
+
+var button = d3.selectAll("#filter-btn");
+
+var form = d3.selectAll("#filters")
 
 
-    var filteredData = tableData.filter(info => info.datetime === inputValue);
+button.on("click", runEnter);
+form.on("submit", runEnter);
 
-    tbody.append(filteredData);
-
-    console.log(filteredData);
-};
+createTable(tableData);
