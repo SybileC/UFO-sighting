@@ -33,7 +33,7 @@ form.on("submit", runEnter);
 function runEnter(){
     d3.event.preventDefault();
     
-    var inputfield = d3.select("datetime");
+    var inputfield = d3.select("#datetime");
     var inputValue = inputfield.property("value");
 
     console.log(d3.event.target);
