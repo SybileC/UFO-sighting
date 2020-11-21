@@ -39,9 +39,6 @@ function runEnter(){
         
         filteredData = filteredData.filter(info => info.datetime === inputValue);
 
-    // tbody.append(filteredData);
-
-    // console.log(filteredData);
     createTable(filteredData);
 }
 
