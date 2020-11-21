@@ -7,9 +7,9 @@ tbody = d3.select("tbody");
 
 console.log(tableData)
 
-// function createTable(tabledata) {
+function createTable(tabledata) {
 
-//     table = tbody.html("")
+    table = tbody.html("")
     
     tableData.forEach(info => {
     console.log(info);
@@ -20,7 +20,7 @@ console.log(tableData)
         cell.text(value);
     });
 });
-// };
+};
 
 var button = d3.select("#filter-btn");
 
@@ -33,8 +33,8 @@ form.on("submit", runEnter);
 function runEnter(){
     d3.event.preventDefault();
     
-    var inputfield = d3.select("#datetime");
-    var inputValue = inputfield.property("value");
+    const inputfield = d3.select("#datetime");
+    const inputValue = inputfield.property("value");
 
     console.log(d3.event.target);
     console.log(inputValue);
@@ -45,7 +45,7 @@ function runEnter(){
 
     var filteredData = tableData.filter(info => info.datetime === inputValue);
 
-    cell.append(filteredData);
+    tbody.append(filteredData);
 
     console.log(filteredData);
 };
