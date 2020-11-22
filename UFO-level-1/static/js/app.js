@@ -8,9 +8,10 @@ const tbody = d3.select("tbody");
 console.log(tableData)
 
 function createTable(tableData) {
-
+    // Clear existing table
     tbody.html("")
     
+    // Loop through tableData, append table and add rows to web page 
     tableData.forEach(info => {
     console.log(info);
     const row = tbody.append("tr");
