@@ -23,28 +23,6 @@ function createTable(tableData) {
 });
 }
 
-// // var selInfo = d3.getElementById("selInfo");
-
-// //set up output string
-// var inputValue = d3.select("form>input").property("value");
-// // in += "<ul> n";
-// //step through options
-// for (i = 0; i < selInfo.length; i++){
-//  //examine current option
-//  currentOption = selLanguage[i];
-//  //print it if it has been selected
-//  if (currentOption.selected == true){
-//     if (inputValue); {
-//         console.log(d3.event.target);
-//         console.log(inputValue);
-//         filteredData = filteredData.filter(info => info.datetime === inputValue);
-
-//     createTable(filteredData);
-// //  result += " <li>" + currentOption.value + "</li> n";
-//  } // end if
-// } // end for loop
-
-// Create function to filter data based on input value
 function runEnter(){
     d3.event.preventDefault();
     
@@ -71,6 +49,7 @@ function runEnter(){
 }
 }
 
+}
 }
 
 // Create Listening Event
