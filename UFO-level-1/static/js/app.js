@@ -23,7 +23,7 @@ function createTable(tableData) {
 });
 }
 
-
+// Create function to filter data based on input value
 function runEnter(){
     d3.event.preventDefault();
     
@@ -32,8 +32,6 @@ function runEnter(){
     console.log(d3.event.target);
     console.log(inputValue);
 
-    //  reset table
-     
     let filteredData = tableData
 
     if (inputValue); {
@@ -46,6 +44,7 @@ function runEnter(){
 
 }
 
+// Create Listening Event
 var button = d3.selectAll("#filter-btn");
 
 var form = d3.selectAll("form")
@@ -54,4 +53,5 @@ var form = d3.selectAll("form")
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
+// Return to default table
 createTable(tableData);
