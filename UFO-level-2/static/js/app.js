@@ -23,6 +23,7 @@ function createTable(tableData) {
 });
 }
 
+// Create function to filter based on input value and selected option
 function runEnter(){
     d3.event.preventDefault();
     
