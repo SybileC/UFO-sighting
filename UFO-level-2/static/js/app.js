@@ -33,12 +33,12 @@ function runEnter(){
 
     let filteredData = tableData
 
-    var selInfo = d3.getElementById("selInfo");
+    const selInfo = d3.getElementById("selInfo");
 
     for (i = 0; i < selInfo.length; i++){
-        //examine current option
+        
         currentOption = selLanguage[i];
-        //print it if it has been selected
+    
         if (currentOption.selected == true){
 
             if (inputValue); {
