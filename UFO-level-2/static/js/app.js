@@ -23,44 +23,57 @@ function createTable(tableData) {
 });
 }
 
-// Create function to filter based on input value and selected option
-function runEnter(){
+const selInfo = document.querySelector("#selInfo");
+
+selInfo.addEventListener("change", (event) => {
+    for (i = 0; i < selInfo.length; i++) {
+        
+        currentOption = event.target.value
+        // console.log(currentOption);
+    }
+}); 
+
+function runEnter() {
     d3.event.preventDefault();
-    
-    const inputValue = d3.select("form>input").property("value");
+    const inputValue = d3.select("#category").property("value");
 
-    console.log(d3.event.target);
-    console.log(inputValue);
+    let filteredData = tableData;
+    console.log(currentOption);
 
-    let filteredData = tableData
-
-    const selInfo = d3.getElementById("selInfo");
-
-    for (i = 0; i < selInfo.length; i++){
-        
-        currentOption = selLanguage[i];
-    
-        if (currentOption.selected == true){
-
-            if (inputValue); {
-        
+    if (currentOption === "datetime") {
         filteredData = filteredData.filter(info => info.datetime === inputValue);
+        createTable(filteredData);
+    }
 
-    createTable(filteredData);
-}
-}
+    else if (currentOption === "state") {
+        filteredData = filteredData.filter(info => info.state === inputValue);
+        createTable(filteredData);
+    }
+    else if (currentOption === "country") {
+        filteredData = filteredData.filter(info => info.country === inputValue);
+        createTable(filteredData);
+    }
+    else if (currentOption === "shape") {
+        filteredData = filteredData.filter(info => info.shape === inputValue);
+        createTable(filteredData);
+    }
+    else {
+        filteredData = filteredData.filter(info => info.city === inputValue);
+        createTable(filteredData);
+    };
 
-}
-}
 
+};
+
+    
 // Create Listening Event
 var button = d3.selectAll("#filter-btn");
 
-var form = d3.selectAll("form")
+var form = d3.selectAll("form");
 
 
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
-// Return to default table
+
 createTable(tableData);

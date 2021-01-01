@@ -27,7 +27,9 @@ function createTable(tableData) {
 function runEnter(){
     d3.event.preventDefault();
     
-    const inputValue = d3.select("form>input").property("value");
+    // const inputValue = d3.select("form>input").property("value");
+
+    const inputValue = d3.select("#datetime").property("value");
 
     console.log(d3.event.target);
     console.log(inputValue);
