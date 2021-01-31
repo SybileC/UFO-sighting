@@ -1,12 +1,13 @@
 // from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
-
+// Select html tag for table location
 const tbody = d3.select("tbody");
 
+// log tableData in console
 console.log(tableData)
 
+// Function to create table
 function createTable(tableData) {
     // Clear existing table
     tbody.html("")
@@ -23,20 +24,27 @@ function createTable(tableData) {
 });
 }
 
+// Select id tag 
 const selInfo = document.querySelector("#selInfo");
 
 selInfo.addEventListener("change", (event) => {
     for (i = 0; i < selInfo.length; i++) {
         
         currentOption = event.target.value
-        // console.log(currentOption);
+        // Log currenOption in console
+        console.log(currentOption);
     }
 }); 
 
+// Create function to filter data based on input value and current option
 function runEnter() {
+    // Prevent the page from refreshing
     d3.event.preventDefault();
+    
+    // Select the input element, get the raw HTML node and get the value property
     const inputValue = d3.select("#category").property("value");
 
+    // Create new variable for filtered data
     let filteredData = tableData;
     console.log(currentOption);
 
@@ -66,14 +74,15 @@ function runEnter() {
 };
 
     
-// Create Listening Event
+// Select button
 var button = d3.selectAll("#filter-btn");
 
+// Select form
 var form = d3.selectAll("form");
 
-
+// Create Listening Event
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
-
+// Return to default table
 createTable(tableData);
