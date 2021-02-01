@@ -39,7 +39,7 @@ function runEnter(){
     // Create new variable for filtered data
     let filteredData = tableData
 
-    // Create if function to filter data that matches inputValue 
+    // Create if condition to filter data that matches inputValue 
     if (inputValue); {
         
         filteredData = filteredData.filter(info => info.datetime === inputValue);
