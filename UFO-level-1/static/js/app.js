@@ -46,8 +46,7 @@ function runEnter(){
     
     // Create table with filtered data
     createTable(filteredData);
-}
-
+    }
 
 }
 
