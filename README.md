@@ -11,3 +11,5 @@
 - Created a dropdown menu (which contains date/time, city, state, country, shape) in html file and wrote JavaScript code so the user can search for UFO sightings using criteria listed in dropdown menu (UFO-Level-2).
 
 ![Event Handler Category](Images/criteria_inputValue.PNG)
+
+![Website](Images/website.PNG)
