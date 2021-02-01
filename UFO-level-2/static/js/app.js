@@ -24,9 +24,10 @@ function createTable(tableData) {
 });
 }
 
-// Select id tag 
+// Select id tag with dropdown menu
 const selInfo = document.querySelector("#selInfo");
 
+// Add event handler to change category
 selInfo.addEventListener("change", (event) => {
     for (i = 0; i < selInfo.length; i++) {
         
@@ -36,7 +37,7 @@ selInfo.addEventListener("change", (event) => {
     }
 }); 
 
-// Create function to filter data based on input value and current option
+// Create function to filter data based on input value and current option\category
 function runEnter() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
@@ -48,8 +49,10 @@ function runEnter() {
     let filteredData = tableData;
     console.log(currentOption);
 
+    // Create if condition to filter data that matches inputValue based on current category
     if (currentOption === "datetime") {
         filteredData = filteredData.filter(info => info.datetime === inputValue);
+        // Create table with filtered data
         createTable(filteredData);
     }
 
